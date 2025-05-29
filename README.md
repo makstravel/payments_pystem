@@ -52,7 +52,7 @@ POST /api/webhook/bank/
 ```
 ### Получение баланса по ИНН
 
-GET /api/organizations/<inn>/balance/
+GET /api/organizations/{INN}/balance/
 
 ```bash
 {
