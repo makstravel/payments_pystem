@@ -17,23 +17,31 @@ Backend-сервис на Django, реализующий прием входящ
 
 ```bash
 pip install -r requirements.txt
+```
+### ⚙️ Настройка переменных окружения (.env)
 
-⚙️ Настройка переменных окружения (.env)
-
+```bash
 DB_NAME=...
 DB_USER=...
 DB_PASSWORD=...
 DB_HOST=...
 DB_PORT=...
+```
 
-🔄 Миграции и запуск
+### 🔄 Миграции и запуск
+
+```bash
 python manage.py migrate
+```
+```bash
 python manage.py runserver
+```
 
-📨 Пример Webhook-запроса
+### 📨 Пример Webhook-запроса
 
 POST /api/webhook/bank/
 
+```bash
 {
   "operation_id": "ccf0a86d-041b-4991-bcf7-e2352f7b8a4a",
   "amount": 145000,
@@ -41,3 +49,14 @@ POST /api/webhook/bank/
   "document_number": "PAY-328",
   "document_date": "2024-04-27T21:00:00Z"
 }
+```
+### Получение баланса по ИНН
+
+GET /api/organizations/<inn>/balance/
+
+```bash
+{
+  "inn": "1234567890",
+  "balance": 145000
+}
+```
